@@ -1,0 +1,82 @@
+<p>createads works!</p>
+
+<div class="container">
+    <div class="ro">
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="card-title">
+                    <h2>PLEASE FILL THE DETAILS TO CREATE AD FOR YOUR HOUSE.</h2>
+                </div>
+
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="createads(ref.value);">
+                        <div class="form-group input-box">
+                            <label for="title">ENTER TITLE</label>
+                            <input type="text" id="title" class="form-control" name="title" placeholder="enter title" required ngModel>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="bedroom">ENTER BEDROOM</label>
+                            <input type="text" id="bedroom" class="form-control" name="bedroom" placeholder="enter title" required ngModel>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="kitchen">ENTER KITCHEN</label>
+                            <input type="text" id="kitchen" class="form-control" name="kitchen" placeholder="enter title" required ngModel>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="washroom">ENTER WASHROOM</label>
+                            <input type="text" id="washroom" class="form-control" name="washroom" placeholder="enter washroom" required ngModel>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="phone">ENTER PHONE</label>
+                            <input type="tel" id="phone" class="form-control" name="phone" placeholder="enter phone" required ngModel>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="area">ENTER AREA</label>
+                            <input type="text" id="area" class="form-control" name="area" placeholder="enter area" required ngModel>
+                        </div>
+
+                        <div class="form-group input-box">
+                            <label for="price">ENTER PRICE</label>
+                            <input type="text" id="price" class="form-control" name="price" placeholder="enter price" required ngModel>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="division">Select the state</label>
+                            <select id="division" name="division" class="form-control" [(ngModel)]="mySelect" (change)="onDivisionSelected(ref.value)"  >
+                                <option>choose here...</option>
+                                <option *ngFor="let _divisionValue of divisionValue" [value]="_divisionValue.divisionName">{{ _divisionValue.divisionName }}</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="location">Select the district</label>
+                            <select id="location" name="location" class="form-control" ngModel>
+                                <option>choose here...</option>
+                                <option *ngFor="let _locationNameData of locationNameData" [value]="_locationNameData.locationName">{{ _locationNameData.locationName }}</option>
+                            </select>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="address">ENTER ADDRESS</label>
+                            <textarea cols="20" rows="5" id="address" class="form-control" name="address" placeholder="enter address" required ngModel></textarea>
+                        </div>
+            
+                        <div class="form-group input-box">
+                            <label for="description">ENTER DESCRIPTION</label>
+                            <textarea cols="30" rows="5" id="description" class="form-control" name="description" placeholder="enter additional info" required ngModel></textarea>
+                        </div>
+
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

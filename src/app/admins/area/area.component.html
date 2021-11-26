@@ -1,0 +1,93 @@
+<div class="container">
+    <h4 class="text-center">ALL AREAS LIST</h4>
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">MIN_AREA LIST</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _minAreaValue of minAreaValue">
+                            {{ _minAreaValue.minAreaName }}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deleteMinArea(_minAreaValue._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">MAX_AREA LIST</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _maxAreaValue of maxAreaValue">
+                            {{ _maxAreaValue.maxAreaName }}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deleteMaxArea(_maxAreaValue._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD MIN-AREA LIST</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="onSubmitminArea(ref.value);">
+                        <div class="form-group input-box">
+                            <label for="minArea">ENTER MINIMUM AREA</label>
+                            <input type="text" class="form-control" id="minArea" name="minArea" placeholder="enter area of house..." required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD MAX-AREA LIST</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref1="ngForm" (ngSubmit)="onSubmitmaxArea(ref1.value);">
+                        <div class="form-group input-box">
+                            <label for="maxArea">ENTER MAXIMUM AREA</label>
+                            <input type="text" class="form-control" id="maxArea" name="maxArea" placeholder="enter area of a house" required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>

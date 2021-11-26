@@ -1,0 +1,48 @@
+<div class="container">
+    <h4 class="text-center">ALL MONEY LIST</h4>
+    <div class="row">
+
+        <div class="col-lg-8 col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ROOMS LIST</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _getRoomNumber of getRoomNumber">
+                            {{ _getRoomNumber.roomNum}}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deleteRoom(_getRoomNumber._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD ROOMS-NUMBER</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="onSubmitAddRoom(ref.value);">
+                        <div class="form-group input-box">
+                            <label for="room">ENTER ROOM NUMBER(S)</label>
+                            <input type="text" class="form-control" id="room" name="room" placeholder="enter how many rooms available" required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>

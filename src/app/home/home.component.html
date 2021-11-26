@@ -1,0 +1,154 @@
+<div class="jumbotron">
+    <h1 class="display-4">HOUSE-RENTALS</h1>
+    <p class="lead">A website where you can find house/room/apartment for rentals. or you can display ads of your house which available for rents in your area by resgistering in this website.</p>
+    <hr class="my-4">
+    <p>looking for house near you please search.</p>
+    <p>wanna display ads, please register</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" routerLink="register" role="button">REGISTER</a>
+    </p>
+</div>
+
+<div class="container-fluid">
+    
+    <div class="text-center">
+      <h2>ALL HOUSE-RENTALS ADS</h2>
+    </div>
+
+    <div class="row">
+
+        <!-- right side to display cards of houses -->
+        <div class="col-lg-8">
+
+
+            <!-- search results -->
+            <div class="row">
+              <div class="col-lg-4">
+                <div *ngIf="_search">
+                  <ul class="gallery">
+                    <h4>Your Search Result is</h4>
+                    <li *ngFor="let house of _search" ng-animate="'animate'" class="gallery" ng-repeat="item in gallery | orderBy: galleryOrder:direction">
+                      <img width="100px" src="/assets/cover-house.jpg" alt="house-image">
+                      <div class="galleryInfo">
+                        <h2>{{ house.title }}</h2>
+                        <h3><b>BTD-{{ house.priceRange }}=/</b></h3>
+                        <p>
+                          <span class="pull-left"><h6>{{ house.location }}, {{ house.division }}</h6></span>
+                          <span class="pull-right"><a routerLink="detail/{{house._id}}" routerLinkActive="router-link-active"><h6>View Details</h6></a></span>
+                        </p>
+                      </div>
+                    </li>
+                
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- search results ends -->
+
+            <!-- all ads results -->
+
+            <div class="row">
+                <div class="col-lg-4"  *ngFor="let house of _house">
+                    <div class="card mb-3">
+                        <img class="card-img-top" src="/assets/cover-house.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ house.title }}</h5>
+                          <p class="card-text"><b>BTD-{{ house.priceRange }}/-</b></p>
+                          <p><span class="pull-left"><h6>{{ house.location }}, {{ house.division }}</h6></span></p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                        <div class="card-footer">
+                          <span class="pull-right"><a routerLink="detail/{{house._id}}" routerLinkActive="router-link-active"><h6>View Details</h6></a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- all ads results ends -->
+
+
+            
+        </div>
+
+        <!-- left side search -->
+
+        <div class="col-lg-4">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <form #ref="ngForm" (ngSubmit)="onSubmit(ref.value);">
+                    <div class="form-group col-md-12">
+                        <label for="division">State</label>
+                        <select id="division" name="division" class="form-control" [(ngModel)]="mySelect" (change)="onNameSelected(ref.value)">
+                          <option selected>Choose...</option>
+                          <option *ngFor="let division of _division" [value]="division.divisionName">{{ division.divisionName }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="location">DISTRICT</label>
+                        <select id="location" name="location" class="form-control" ngModel>
+                          <option selected>Choose...</option>
+                          <option *ngFor="let location of _location" [value]="location.locationName">{{ location.locationName }}</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="minMoney">MIN-PRICE</label>
+                            <select id="minMoney" name="minMoney" class="form-control" [(ngModel)]="myMoney" (change)="onMoneySelected(ref.value)">
+                              <option selected>Choose...</option>
+                              <option *ngFor="let _minMoneyValue of minMoneyValue" [value]="_minMoneyValue.minMoneyName">{{ _minMoneyValue.minMoneyName }}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                          <label for="maxMoney">MAX-PRICE</label>
+                          <select id="maxMoney" name="maxMoney" class="form-control" ngModel>
+                            <option selected>Choose...</option>
+                            <option *ngFor="let _maxMoneyValue of maxMoneyValue" [value]="_maxMoneyValue.maxMoneyName">{{ _maxMoneyValue.maxMoneyName }}</option>
+                          </select>
+                        </div>
+                    </div>
+
+                    
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                          <label for="minArea">MIN-AREA</label>
+                          <select id="minArea" name="minArea" class="form-control" [(ngModel)]="myArea" (change)="onAreaSelected(ref.value)">
+                            <option selected>Choose...</option>
+                            <option *ngFor="let minArea of _minArea" [value]="minArea.minAreaName">{{ minArea.minAreaName }}</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="maxArea">MAX-AREA</label>
+                          <select id="maxArea" name="maxArea" class="form-control" ngModel>
+                            <option selected>Choose...</option>
+                            <option *ngFor="let maxArea of _maxArea" [value]="maxArea.maxAreaName">{{ maxArea.maxAreaName }}</option>
+                          </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-group col-md-12">
+                        <label for="roomNum">ROOM(S)</label>
+                        <select id="roomNum" name="roomNum" class="form-control" ngModel>
+                          <option selected>Choose...</option>
+                          <option *ngFor="let _getRoom of getRoomNumber" [value]="_getRoom.roomNum">{{ _getRoom.roomNum }}</option>
+                        </select>
+                    </div>
+                      
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

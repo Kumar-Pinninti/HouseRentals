@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <h2>WELCOME TO HOUSE_RENTALS</h2>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-sm-2 col-md-3 col-lg-2"></div>
+        <div class="col-12 col-sm-10 col-md-6 col-lg-8">
+        <div class="card">
+        <h3 class="card-title ml-2">PLEASE REGISTER TO CREATE YOUR HOUSE ADS IN OUR WEBSITE!</h3>
+        <form #ref="ngForm" (ngSubmit)="onSubmit(ref.value);">
+            <div class="card-body">
+                <div class="form-group input-box">
+                    <label for="eun">ENTER USERNAME</label>
+                    <input type="text" class="form-control" id="eun" name="eun" placeholder="enter username" required ngModel>
+                </div>
+                <div class="form-group input-box">
+                    <label for="email">ENTER YOUR EMAIL</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="enter email" required ngModel>
+                </div>
+                <div class="form-group input-box">
+                    <label for="eup">ENTER PASSWORD</label>
+                    <input type="password" class="form-control"  id="eup" name="password" placeholder="password" required ngModel>
+                </div>
+                <div class="form-group input-box">
+                    <label for="ecp">CONFIRM PASSWORD</label>
+                    <input type="password" class="form-control"  id="ecp" name="ecp" placeholder="enter same password" required ngModel>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+               <button type="submit" class="btn btn-primary">save</button>
+            </div>
+        </form>
+        </div>        
+        </div>
+        <div class="col-sm-10 col-md-3 col-lg-2"></div>
+    </div>
+</div>

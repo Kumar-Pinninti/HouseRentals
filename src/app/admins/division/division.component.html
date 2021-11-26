@@ -1,0 +1,48 @@
+<div class="container">
+    <h4 class="text-center">ALL STATE LIST</h4>
+    <div class="row">
+
+        <div class="col-lg-8 col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">STATE LIST</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _getDivisionNumber of getDivisionNumber">
+                            {{ _getDivisionNumber.divisionName}}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deletedivision(_getDivisionNumber._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD THE STATE</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="onSubmitAddDivision(ref.value);">
+                        <div class="form-group input-box">
+                            <label for="division">ENTER YOUR STATE</label>
+                            <input type="text" class="form-control" id="division" name="division" placeholder="enter the state" required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</div>

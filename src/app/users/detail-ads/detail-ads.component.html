@@ -1,0 +1,87 @@
+<p>detail-ads works!</p>
+
+<div class="container">
+    <div class="row">
+      <!-- <div class="col-md-8 offset-2">
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        <br>
+      </div> -->
+      <div class="col-md-10 offset-1">
+        <div class="card signin-card">
+  
+          <div class="card-body card-basic-content" *ngIf="house">
+
+            <div class="row">
+
+              <div class="col-md-6">
+
+                <table striped="true">
+                  <thead>
+                    <tr></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row"><b>Bed ROOM</b></th>
+                      <td>{{ house.bedRoom }}</td>
+                    <tr>
+                      <th scope="row"><b>Wash Room</b></th>
+                      <td>{{ house.washRoom }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><b>Price Range</b></th>
+                      <td>{{ house.priceRange }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><b>Address</b></th>
+                      <td>{{ house.location }}, {{ house.division }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+  
+              <div class="col-md-6">
+
+                <table striped="true">
+                  <thead>
+                    <tr></tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <th scope="row"><b>Balcony</b></th>
+                      <td>Yes</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><b>Mobile</b></th>
+                      <td>{{ house.phone }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row"><b>Area</b></th>
+                      <td>{{ house.area }}sqft</td>
+                    </tr>
+                  </tbody>
+
+                </table>
+
+              </div>
+            </div>
+            <hr>
+            <span><i><b>Description:</b></i></span>
+            <p>
+                {{ house.description }}
+            </p>
+            <br>
+            <hr>
+            <span><i><b>Amenities:</b></i></span>
+            <p>
+              Here list of some amenities
+            </p>
+  
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,6 @@
+nav{
+    background: #020031;
+}
+nav.sidebar{
+    min-height: 100vh;
+}

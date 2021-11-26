@@ -1,0 +1,32 @@
+<p>user works!</p>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <h4>This is User House Ads List</h4>
+        <hr>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+  <br>
+  <div>
+    <ul class="gallery">
+  
+      <li *ngFor="let house of _house" ng-animate="'animate'" class="gallery" ng-repeat="item in gallery | orderBy: galleryOrder:direction">
+        <img width="100px" src="/assets/cover-house.jpg" alt="house-image">
+        <div class="galleryInfo">
+          <h2>{{ house.title }}</h2>
+          <h3><b>BTD-{{ house.priceRange }}=/</b></h3>
+          <p>
+            <span class="pull-left"><h6>{{ house.location }}, {{ house.division }}</h6></span>
+            <span class="pull-right"><a routerLink="/detail/{{house._id}}" routerLinkActive="router-link-active"><h6>View Details</h6></a></span>
+            <span class="pull-right"><a routerLink="/addimage/{{house._id}}" routerLinkActive="router-link-active"><h6>Add Picture</h6></a></span>
+          </p>
+        </div>
+      </li>
+  
+    </ul>
+  </div>
+  

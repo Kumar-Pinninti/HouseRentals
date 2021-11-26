@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row pt-5">
+        <div class="col-sm-2 col-md-3 col-lg-4"></div>
+        <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div class="card">
+        <h2 class="card-title text-center">LOGIN & EXPLORE</h2>
+        <form #ref="ngForm" (ngSubmit)="userLogin(ref.value)">
+            <div class="card-body">
+                <div class="form-group input-box">
+                    <label for="email">ENTER EMAIL</label>
+                    <input type="email" class="form-control" id="email" name="email" required ngModel>
+                </div>
+                <div class=" form-group input-box">
+                    <label for="password">ENTER PASSWORD</label>
+                    <input type="password" class="form-control" id="password" name="password" required ngModel>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+
+                <!-- login -->
+                <span class="mr-5">
+                    <button type="submit" class="btn btn-success">LOGIN</button>
+                </span>
+
+                <!-- Button trigger modal -->
+                <span class="ml-5">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        demo
+                    </button>
+                </span>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Demo Login!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-left">
+                                <p>userName: user12@gmail.com</p>
+                                <p>password: user12</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Modal ends -->
+               
+            </div>
+        </form>
+        </div>        
+        </div>
+        <div class="col-sm-10 col-md-3 col-lg-4"></div>
+    </div>
+</div>

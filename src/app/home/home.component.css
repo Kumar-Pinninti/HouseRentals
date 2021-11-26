@@ -1,0 +1,155 @@
+.sortingOptions {
+	margin: 4px 0;
+	color: #FDF5E6;
+}
+
+.formGroup {
+  margin-right: 7px;
+}
+
+.assets {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	justify-content: space-between;
+	list-style-type: none;
+	color: #403f3f;
+}
+
+.gallery {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    opacity: .95;
+    z-index: 10;
+    display: inline-block;
+    text-align: center;
+}
+
+.gallery ul {
+    margin: 0;
+    padding: 0;
+    background: #FDF6E3;
+}
+
+.gallery li {
+	flex: 1 0 auto;
+    background: #FDF5E6;
+	width: 370px;
+    margin: 12px;
+    padding: 10px 10px 0 10px;
+    border-radius: 20px;
+    border: 1px dotted #111;
+    opacity: .9;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.gallery a {
+    display: block;
+    text-decoration: none;
+}
+
+.gallery li:hover {
+    background: #FDF6E3;
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    z-index: 1000;
+}
+
+.gallery img {
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.galleryInfo h2 {
+	text-transform: capitalize;
+	font-size: 18px;
+	margin: 0;
+	padding-top: 20px;
+	padding-bottom: 2px;
+}
+
+.galleryInfo h3 {
+	font-size: 14px;
+	margin: 0;
+	padding-bottom: 20px;
+	border-bottom: 2px solid #bbb;
+}
+
+.galleryInfo p {
+	font-size: 12px;
+	line-height: 24px;
+	color: #333;
+    margin-top: 10px;
+	padding: 0 0 20px 0;
+}
+
+.gallery i {
+  margin-bottom: 12px;
+}
+
+.gallery .fav:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.gallery .grade:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+
+
+.signin-card{
+  padding-top: 0%;
+  width: 100%;
+  border-radius: 10px;
+}
+.card-basic-content{
+  padding: 50px;
+  text-align: justify;
+  color: black;
+  /* background-color: blue; */
+
+}
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  font-size: 18px;
+  width: 100%;
+  margin: 4px 0px;
+}
+
+.form-button{
+
+  width: 100%;
+  font-size: 18px;
+  padding: 4px 0px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 20px;
+}
+
+.rounded {
+  border-radius: 25px !important;
+}
+button {
+  text-transform: none;
+  font-size: 16px;
+  color: white !important;
+  width: 100%;
+}
+
+h4 {
+  text-align: center;
+}

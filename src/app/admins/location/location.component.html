@@ -1,0 +1,92 @@
+<p>location works!</p>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-title">
+                    <h4>ADD DISTRICT LIST</h4>
+                </div>
+
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="onSubmitAddLocation(ref.value);">
+                        <div class="form-group col-md-12">
+                            <label for="inputState">Select the state</label>
+                            <select id="inputState" name="inputState" class="form-control" ngModel>
+                              <option *ngFor="let _division of division" [value]="_division.divisionName">{{ _division.divisionName }}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group input-box">
+                            <label for="district">ENTER DISTRICT</label>
+                            <input type="text" class="form-control" id="district" name="district" placeholder="select state first and add district in that state" required ngModel>
+                        </div>
+
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-title">
+                    <h4>DISPLAY LIST</h4>
+                </div>
+
+                <div class="card-body">
+                    <form #ref1="ngForm">
+                        <div class="form-group col-md-12">
+                            <label for="inputState">Select the state</label>
+                            <select id="inputState" name="inputState" class="form-control" [(ngModel)]="mySelect" (change)="selectlocation(ref1.value)"  >
+                                <option>choose here...</option>
+                                <option *ngFor="let _division of division" [value]="_division.divisionName">{{ _division.divisionName }}</option>
+                            </select>
+                        </div>
+
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _locationNameData of locationNameData">
+                                {{ _locationNameData.locationName}}
+                                <span class="text-right">
+                                    <i class="fa fa-trash" (click)="deletelocation(_locationNameData._id)"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">DISTRICT LIST</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _getLocationData of getLocationData">
+                            {{ _getLocationData.locationName}}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deletelocation(_getLocationData._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>

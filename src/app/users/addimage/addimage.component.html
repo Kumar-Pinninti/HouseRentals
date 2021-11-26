@@ -1,0 +1,16 @@
+<p>addimage works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+            <form>
+                <div class="form-group">
+                    <label for="coverimage">cover image</label>
+                    <input type="file" class="form-control" ngModel (change)="fileChangeEvent1($event)" placeholder="Upload a file..."/>
+
+                    <button (click)="upload1()" type="submit" class="form-btn btn-primary">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

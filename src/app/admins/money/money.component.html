@@ -1,0 +1,93 @@
+<div class="container">
+    <h4 class="text-center">ALL MONEY LIST</h4>
+    <div class="row">
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">min list</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _minMoneyValue of minMoneyValue">
+                            {{ _minMoneyValue.minMoneyName }}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deleteMinMoney(_minMoneyValue._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">max list</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let _maxMoneyValue of maxMoneyValue">
+                            {{ _maxMoneyValue.maxMoneyName }}
+                            <span class="text-right">
+                                <i class="fa fa-trash" (click)="deleteMaxMoney(_maxMoneyValue._id)"></i>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD MIN-MONEY LIST</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref1="ngForm" (ngSubmit)="onSubmitMinMoney(ref1.value);">
+                        <div class="form-group input-box">
+                            <label for="minMoney">ENTER MINIMUM AMOUNT</label>
+                            <input type="text" class="form-control" id="minMoney" name="minMoney" placeholder="enter money in rs." required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+            
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">ADD MAX-MONEY LIST</h4>
+                </div>
+                <div class="card-body">
+                    <form #ref="ngForm" (ngSubmit)="onSubmitMaxMoney(ref.value);">
+                        <div class="form-group input-box">
+                            <label for="maxMoney">ENTER MAXIMUM AMOUNT</label>
+                            <input type="text" class="form-control" id="maxMoney" name="maxMoney" placeholder="enter money in rs." required ngModel>
+                        </div>
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary">save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
